@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramics</title>
+    <!-- <link href="./public/style/tailwind.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        satoshi: ["Satoshi", "sans"],
+                        satoshi_italic: ["Satoshi_italic", "sans"],
+                    },
+                    backgroundColor: {
+                        'whisper-white': '#F5EFE9',
+                        'soft-cream': '#E8DDC1',
+                        'creamy-white': '#E7DCD0',
+                        'deep-black': '#212121',
+                        'deep-brown': '#5F5329',
+                        'earthly-brown': '#4C412D',
+                        'rich-cocoa': '#52441D',
+                        'golden-rod': '#C7971A',
+                        'amber-gold': '#CC9A1E',
+                    },
+                    colors: {
+                        'toffee-brown': '#A38858',
+                        'creamy-white': '#FCF5EB',
+                        'beige-white': '#EFE6DF',
+                    },
+                    fontSize: {
+                        'heading': '4.17rem'
+                    },
+                    borderRadius: {
+                        'small': '10px',
+                        'large': '20px'
+                    },
+                    borderColor: {
+                        'deep-brown': '#5F5329',
+                    }
+                }
+            },
+            plugins: [],
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @font-face {
+                font-family: 'Satoshi';
+                src: url("./public/fonts/satoshi/Satoshi-Variable.ttf");
+            }
+    
+            @font-face {
+                font-family: 'Satoshi_italic';
+                src: url("./public/fonts/satoshi/Satoshi-VariableItalic.ttf");
+            }
+
+            @layer utilities {
+                .bg-hero {
+                    @apply bg-center lg:bg-[0rem_-12.5rem] bg-cover bg-no-repeat;
+                    background-image: url('./public/images/hero-bg.jpg');
+                }
+
+                .btn-rounded {
+                    @apply flex justify-center items-center w-32 lg:w-36 h-10 rounded-[40px] bg-white text-black lg:text-white lg:bg-amber-gold;
+                }
+            }    
+    </style>
+</head>
+
+<body class="font-satoshi">
+    <div class="relative">
+        <nav id="nav"
+            class='w-full transition duration-0 px-6 h-14 fixed top-4 lg:top-6 left-0 flex justify-between items-center text-white z-50'>
+            <div id="nav-large-body"
+                class="hidden transition duration-300 ease-in-out w-full h-full px-8 rounded-large lg:flex justify-between items-center bg-white/10 backdrop-blur-md shadow">
+                <ul class='flex justify-center items-center gap-x-6 text-sm z-20'>
+                    <li>
+                        <a href="#">Catalogue</a>
+                    </li>
+                    <li>
+                        <a href="#">Collection</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class='flex justify-center items-center gap-x-10 text-sm z-20'>
+                    <li>
+                        <a href="#">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#">Collection</a>
+                    </li>
+                </ul>
+
+                <h1 class='absolute w-full h-full flex justify-center items-center top-0 left-0 text-2xl font-semibold'>
+                    Ceramics
+                </h1>
+            </div>
+
+            <h1 class="transition duration-300 ease-in-out text-2xl font-bold lg:hidden">Ceramics</h1>
+            <button class="text-lg lg:hidden">
+                <span id="nav-small-burger" class="flex [&>span]:bg-white flex-col h-4 w-6 space-y-1">
+                    <span class="w-full h-full block transition duration-300 ease-in-out"></span>
+                    <span class="w-full h-full block transition duration-300 ease-in-out"></span>
+                    <span class="w-full h-full block transition duration-300 ease-in-out"></span>
+                </span>
+            </button>
+        </nav>
+
+        <header class="bg-hero h-screen w-full flex flex-col justify-end items-center relative">
+            <div
+                class="w-full h-full lg:h-1/2 px-11 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+                <div
+                    class="flex flex-col justify-center items-center lg:block space-y-4 lg:space-y-20 -translate-y-6 lg:-translate-y-9">
+                    <h1
+                        class="text-center text-lg !leading-snug font-light lg:text-5xl lg:text-left text-white w-28 lg:w-[30rem]">
+                        Vase
+                        Your
+                        Imagination,
+                        Blossom Your Space!
+                    </h1>
+
+                    <a href="#" class="btn-rounded">
+                        Shop
+                    </a>
+                </div>
+
+                <div
+                    class='absolute bottom-5 right-11 lg:static self-end lg:self-center translate-x-7 lg:translate-x-0'>
+                    <div
+                        class='w-52 h-36 lg:w-72 lg:h-52 bg-[url(./public/images/hero-small-image.jpg)] bg-cover bg-center rounded-small flex justify-end items-end px-2 lg:px-4 py-2'>
+                        <div class=''>
+                            <a href="#"
+                                class="h-8 lg:h-10 w-8 lg:w-10 text-sm font-bold rounded-full bg-white/5 backdrop-blur-2xl text-white flex justify-center items-center">
+                                GO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="bg-whisper-white min-h-screen px-4 pt-8 lg:px-11">
+            <div class='w-full'>
+
+                <div
+                    class="w-full gap-y-3 text-black flex flex-col lg:flex-row items-start lg:items-center justify-between">
+                    <a class="text-xl" href="#">Shop</a>
+                    <a class="text-lg lg:text-base" href="#">Collection</a>
+                </div>
+
+                <div
+                    class='w-full mt-5 flex flex-col lg:flex-row justify-center items-center lg:gap-x-5 text-white gap-y-8 lg:gap-y-0'>
+
+                    <div
+                        class='h-72 lg:h-[27rem] w-full flex flex-col justify-between items-start bg-[url(./public/images/anita-austvika-1u_jqIVZWLQ-unsplash.jpg)] bg-cover bg-center rounded-large pt-5 pb-3 px-4 lg:px-6'>
+                        <h2 class='text-xl font-semibold lg:font-bold'>Vase Collection 01</h2>
+                        <a href='#' class='text-sm px-8 py-2 border border-white rounded-3xl'>Nature</a>
+                    </div>
+                    <div
+                        class='h-72 lg:h-[27rem] w-full flex flex-col justify-between items-start bg-[url(./public/images/mathilde-langevin-WUrXahlyjBo-unsplash.jpg)] bg-cover bg-center rounded-large pt-5 pb-3 px-4 lg:px-6'>
+                        <h2 class='text-xl font-semibold lg:font-bold'>Vase Collection 01</h2>
+                        <a href='#' class='text-sm px-8 py-2 border border-white rounded-3xl'>Nature</a>
+                    </div>
+                    <div
+                        class='h-72 lg:h-[27rem] w-full flex flex-col justify-between items-start bg-[url(./public/images/katy-pritchett-pWjnnbUhcdo-unsplash.jpg)] bg-cover bg-center rounded-large pt-5 pb-3 px-4 lg:px-6'>
+                        <h2 class='text-xl font-semibold lg:font-bold'>Vase Collection 01</h2>
+                        <a href='#' class='text-sm px-8 py-2 border border-white rounded-3xl'>Nature</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="w-full mt-8 flex flex-col justify-center items-center gap-y-6">
+                <div
+                    class="w-full gap-y-3 text-black flex flex-col lg:flex-row items-start lg:items-center justify-start">
+                    <a class="text-xl" href="#">Product</a>
+                </div>
+                <div class="w-full flex justify-center items-center gap-x-3 lg:gap-x-5">
+                    <div
+                        class="w-full flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                        <img class="w-28 lg:w-40"
+                            src="./public/product/flowers-in-a-vase-vase-857e241cebc7a0afd579090cc8fe6a3f.png"
+                            alt="flowers-in-a-vase">
+                        <div class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                            <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                            <div class="w-full flex justify-between items-center">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                    class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                    href="#">Nature</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                        <img class="w-16 lg:w-24"
+                            src="./public/product/vase-ceramic-porcelain-ornamental-plant-interieur-vase-1731455ad6e5cf5c7748dcca58e57a76.png"
+                            alt="vase-ceramic-porcelain-ornamental-plant-interieur">
+                        <div class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                            <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                            <div class="w-full flex justify-between items-center">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                    class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                    href="#">Nature</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full hidden lg:flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                        <img class="w-16 lg:w-24"
+                            src="./public/product/vase-franz-porcelains-ceramic-decorative-arts-big-flyers-bundle-9349f4fb4635c7effc778797a791d042.png"
+                            alt="vase-ceramic-porcelain-ornamental-plant-interieur">
+                        <div class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                            <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                            <div class="w-full flex justify-between items-center">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                    class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                    href="#">Nature</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full hidden lg:flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                        <img class="w-16 lg:w-24"
+                            src="./public/product/franz-porcelains-chinese-ceramics-jingdezhen-vase-16a43f2d5604ede3995c87bf3bc9ca78.png"
+                            alt="vase-ceramic-porcelain-ornamental-plant-interieur">
+                        <div class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                            <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                            <div class="w-full flex justify-between items-center">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                    class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                    href="#">Nature</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-screen flex justify-center items-center text-white mb-3 mt-5 lg:my-0">
+                <div class="w-full flex flex-col lg:flex-row gap-y-7 gap-x-3">
+                    <div
+                        class="h-64 lg:h-[30rem] w-full flex justify-start items-end py-4 lg:py-8 px-6 bg-[url(./public/images/yana-hurska-zeGT9j4ltRA-unsplash.jpg)] bg-cover bg-center rounded-large">
+                        <div class="flex flex-col gap-y-4 justify-between h-full lg:h-fit lg:justify-start items-start">
+                            <h2 class="text-xl font-semibold">Vase Collection 01</h2>
+                            <a class="text-sm px-8 py-2 lg:py-1 border border-white rounded-3xl" href="#">Nature</a>
+                        </div>
+                    </div>
+                    <div
+                        class="h-64 lg:h-[30rem] w-full flex justify-start items-end py-4 lg:py-8 px-6 bg-[url(./public/images/karolina-grabowska-25KEp7ApksY-unsplash.jpg)] bg-cover bg-center rounded-large">
+                        <div class="flex flex-col gap-y-4 justify-between h-full lg:h-fit lg:justify-start items-start">
+                            <h2 class="text-xl font-semibold">Vase Collection 01</h2>
+                            <a class="text-sm px-8 py-2 lg:py-1 border border-white rounded-3xl" href="#">Nature</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full hidden lg:block">
+                <div class="w-full flex flex-col justify-center items-center gap-y-6">
+                    <div
+                        class="w-full gap-y-3 text-black flex flex-col lg:flex-row items-start lg:items-center justify-between">
+                        <a class="text-xl" href="#">By Catergory</a>
+                        <a class="text-lg lg:text-base" href="#">Collection</a>
+                    </div>
+                    <div class="w-full flex justify-center items-center gap-x-3 lg:gap-x-5">
+                        <div
+                            class="w-full flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                            <img class="w-16 lg:w-28"
+                                src="./public/product/vase-nemadji-ceramic-pottery-coffee-tables-pottery-045dc131953736faa7f2aae68ef5a0a7.png"
+                                alt="vase-nemadji-ceramic-pottery-coffee-tables-pottery">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                                <div class="w-full flex justify-between items-center">
+                                    <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                        class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                        href="#">Nature</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                            <img class="w-16 lg:w-24"
+                                src="./public/product/franz-porcelains-vase-flower-artwork-4dcec6e49b55e1f4a948c8bcd003a691.png"
+                                alt="franz-porcelains-vase-flower-artwork">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                                <div class="w-full flex justify-between items-center">
+                                    <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                        class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                        href="#">Nature</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full hidden lg:flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                            <img class="w-16 lg:w-36"
+                                src="./public/product/vase-bedroom-house-green-furniture-vase-119e56dd14b6afe1932c378a791074e0.png"
+                                alt="vase-bedroom-house-green-furniture">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                                <div class="w-full flex justify-between items-center">
+                                    <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                        class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                        href="#">Nature</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full hidden lg:flex justify-center items-center h-56 lg:h-72 bg-soft-cream rounded-small relative">
+                            <img class="w-16 lg:w-24"
+                                src="./public/product/vase-porcelain-ceramic-clip-art-vase-782495b65ff9a63e6a787dccfa99b425.png"
+                                alt="vase-porcelain-ceramic-clip-art">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-black lg:font-light">Vase 01</h2>
+                                <div class="w-full flex justify-between items-center">
+                                    <h2 class="text-sm lg:text-xl text-black lg:font-light">$ 5.00</h2><a
+                                        class="text-xs lg:text-sm px-3 py-1 lg:px-8 lg:py-2 border border-black rounded-3xl"
+                                        href="#">Nature</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full hidden lg:block">
+                <div class="w-full h-screen flex justify-center items-center text-white">
+                    <div class="w-full flex flex-col lg:flex-row gap-x-3">
+                        <div
+                            class="h-[30rem] w-full flex justify-start items-end px-8 py-12 bg-[url(./public/images/anton-sukhinov-4GvsTa3Y-5I-unsplash.jpg)] bg-cover bg-center rounded-large">
+                            <div class="flex flex-col justify-start items-start">
+                                <h2 class="w-40 font-light text-3xl">Vase Master Redefined</h2>
+                            </div>
+                        </div>
+                        <div
+                            class="h-[30rem] w-full flex justify-between items-center px-6 py-8 bg-creamy-white rounded-large">
+                            <div
+                                class="min-w-60 flex flex-col gap-y-4 justify-end pb-12 items-start h-96 border-2 border-deep-brown rounded-large text-black">
+                                <img class="w-56"
+                                    src="./public/product/flowers-in-a-vase-vase-857e241cebc7a0afd579090cc8fe6a3f.png"
+                                    alt="flowers-in-a-vase">
+                                <div class="w-full flex flex-col items-center justify-center">
+                                    <p class="text-xl">Vase 01</p>
+                                    <p class="">$ 5.00</p>
+                                </div>
+                            </div>
+                            <div
+                                class="min-w-60 flex flex-col gap-y-4 justify-end pb-12 items-start h-96 border-2 border-deep-brown rounded-large text-black">
+                                <img class="w-56"
+                                    src="./public/product/flower-bouquet-floral-design-magnolia-brandy-floral-art-8dc0be0f81838b9fc283ffecb615b110.png"
+                                    alt="flower-bouquet-floral-design-magnolia-brandy-floral-art">
+                                <div class="w-full flex flex-col items-center justify-center">
+                                    <p class="text-xl">Vase 01</p>
+                                    <p class="">$ 5.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full hidden lg:block">
+                <div class="w-full flex flex-col justify-center items-center gap-y-6">
+                    <div
+                        class="w-full gap-y-3 text-black flex flex-col lg:flex-row items-start lg:items-center justify-between">
+                        <a class="text-xl" href="#">By Catergory</a>
+                        <a class="text-lg lg:text-base" href="#">Collection</a>
+                    </div>
+                    <div class="w-full flex justify-center items-center gap-x-3 lg:gap-x-5">
+                        <div
+                            class="w-full flex justify-center items-center h-56 lg:h-72 bg-[url(./public/images/olga-budko-QHSxmbPpI7U-unsplash.jpg)] bg-cover bg-center rounded-small relative">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-white lg:font-light">Vase 01</h2>
+                                <h2 class="text-sm lg:text-xl text-white font-semibold">Vase Collection 01</h2>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full flex justify-center items-center h-56 lg:h-72 bg-[url(./public/images/cat-han-URi_yR9qtgs-unsplash.jpg)] bg-cover bg-center rounded-small relative">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-white lg:font-light">Vase 01</h2>
+                                <h2 class="text-sm lg:text-xl text-white font-semibold">Vase Collection 01</h2>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full hidden lg:flex justify-center items-center h-56 lg:h-72 bg-[url(./public/images/rumman-amin-c-bfpkaVH_A-unsplash.jpg)] bg-cover bg-center rounded-small relative">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-white lg:font-light">Vase 01</h2>
+                                <h2 class="text-sm lg:text-xl text-white font-semibold">Vase Collection 01</h2>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full hidden lg:flex justify-center items-center h-56 lg:h-72 bg-[url(./public/images/tino-rischawy-7X1zd1uI0HI-unsplash.jpg)] bg-cover bg-center rounded-small relative">
+                            <div
+                                class="absolute w-full h-full flex flex-col justify-between items-start px-3 py-4 lg:p-4">
+                                <h2 class="text-sm lg:text-xl text-white lg:font-light">Vase 01</h2>
+                                <h2 class="text-sm lg:text-xl text-white font-semibold">Vase Collection 01</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="w-full mt-12 flex flex-col lg:gap-y-14 lg:px-11 ">
+            <div
+                class="w-full h-80 lg:h-[26rem] flex justify-start items-center bg-[url(./public/images/lia-bekyan-TIJgFhIgdNY-unsplash.jpg)] bg-cover bg-center lg:rounded-large px-4 lg:px-10 overflow-hidden">
+                <div class="text-white flex flex-col gap-y-16 translate-y-9">
+                    <h1 class="w-44 lg:text-3xl font-light lg:w-80">Sculpting Stories with Vases, Unveiling Beauty
+                    </h1><a
+                        class="bg-white lg:bg-soft-cream text-black flex justify-center items-center w-32 lg:w-36 h-10 rounded-[40px]"
+                        href="#">Shop</a>
+                </div>
+            </div>
+
+            <footer
+                class="w-full h-[45vh] lg:h-[60vh] flex bg-golden-rod lg:rounded-large text-white py-7 px-6 lg:px-16 relative">
+                <div
+                    class="absolute lg:static bottom-0 left-0 w-full lg:w-fit h-full flex justify-center lg:justify-start items-center font-bold text-5xl lg:text-7xl">
+                    <h1 class="translate-y-1 lg:translate-y-0">Ceramics</h1>
+                </div>
+                <div class="w-full h-full flex flex-col justify-between">
+                    <div class="w-full flex justify-center lg:justify-end">
+                        <ul class="hidden lg:flex w-full justify-between border-b pb-3 border-b-white">
+                            <li><a href="#">Browse</a></li>
+                            <li><a href="#">Insight</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Insight</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                        <ul
+                            class="flex justify-center gap-x-6 pb-1 items-center lg:hidden font-light border-b border-white">
+                            <li><a href="#">Insight</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-full justify-center items-center hidden lg:flex gap-x-4 "><button
+                            class="min-w-36 h-12 rounded-small text-sm bg-soft-cream text-black">Sign
+                            Up</button><button
+                            class="min-w-36 h-12 rounded-small text-sm bg-rich-cocoa">Newsletter</button></div>
+                    <div
+                        class="text-sm lg:text-base w-full flex justify-between lg:justify-center items-center font-light lg:gap-x-40">
+                        <p>All rights Reserved</p>
+                        <p>@2024</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="./public/js/script.js"></script>
+</body>
+
+</html>

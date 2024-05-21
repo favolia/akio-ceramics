@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url("../fonts/satoshi/Satoshi-Variable.ttf");
+}
+
+@font-face {
+    font-family: 'Satoshi_italic';
+    src: url("../fonts/satoshi/Satoshi-VariableItalic.ttf");
+}
+
+.bg-hero {
+    @apply bg-center lg:bg-[0rem_-12.5rem] bg-cover bg-no-repeat;
+    background-image: url('../images/hero-bg.jpg');
+}
+
+.btn-rounded {
+    @apply flex justify-center items-center w-32 lg:w-36 h-10 rounded-[40px] bg-white text-black lg:text-white lg:bg-amber-gold;
+}
